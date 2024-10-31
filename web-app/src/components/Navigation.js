@@ -19,6 +19,9 @@ export default async function Navigation() {
                 <li>
                     <Link href={"/api"}>APIs</Link>
                 </li>
+                <li>
+                    <Link href={"/memories"}>Memories</Link>
+                </li>
                 {!data?.user && (
                     <li>
                         <Link href={"/login"}>Login</Link>
