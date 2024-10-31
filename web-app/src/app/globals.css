@@ -18,6 +18,45 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='transform: rotate(-35deg); fill:black;font-size:24px;'><text y='50%'>🍦</text></svg>") 16 0,auto;
+}
+
+a {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  color: rgb(83, 118, 43);
+  padding: 3px;
+}
+
+a:hover {
+  background-color:rgb(185, 214, 152);
+}
+
+.waiting {
+  font-size: 32px;
+  animation-name: wavy;
+  animation-duration: 1.3s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  animation-delay: calc(0.1s * var(--i))
+}
+
+
+
+@keyframes wavy {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: -15px;
+  }
+  100% {
+    top: 0px;
+  }
 }
 
 @layer utilities {
