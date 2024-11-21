@@ -1,0 +1,24 @@
+.cssSection {
+    position: relative;
+    height: 60vh;
+}
+
+.flower, .balloon, .star {
+    position: absolute;
+    font-size: 75px;
+}
+
+.flower {
+    top: 35%;
+    left: 25%;
+}
+
+.balloon {
+    top: 40%;
+    left: 55%;
+}
+
+.star {
+    top: 15%;
+    left: 75%;
+}

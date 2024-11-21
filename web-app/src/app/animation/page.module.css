@@ -1,0 +1,175 @@
+.page {
+    background-color: black;
+    color: rgb(255, 252, 225);
+    font-family: 'Futura';
+    overflow: visible;
+}
+
+
+/* Header */
+.header {
+    text-align: center;
+}
+
+.headerTitle {
+    font-size: 96px;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 60px;
+}
+
+.orange {
+    position: relative;
+}
+
+.orange:before {
+    content: "🍊";
+    position: absolute;
+    left: 4px;
+    font-size: 25px;
+    top: 15px;
+    background: black;
+    animation: orange-spin 2s ease infinite normal forwards;
+}
+
+.flipper { 
+    animation: flipper-flip 15s ease 5s infinite normal forwards;
+    display: inline-block;    
+}
+
+.headerButton{
+    border: 1px solid rgb(255, 252, 225);
+    border-radius: 30px;
+    padding: 15px;
+    margin: 0 10px;
+    transition: ease .3s;
+    position: relative;
+    z-index: 2;
+    background: black;
+}
+
+.confetti,
+.moreConfetti,
+.evenMoreConfetti {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;
+    opacity: 0;
+}
+
+.headerButton:hover {
+    border-color: hotpink;
+    color: hotpink;
+}
+
+.headerButton:hover .confetti{
+    animation: confetti 2s ease 1 normal;
+}
+.headerButton:hover .moreConfetti {
+    animation: moreConfetti 2s ease .2s 1 normal;
+}
+.headerButton:hover .evenMoreConfetti {
+    animation: evenMoreConfetti 2s ease .2s 1 normal;
+}
+
+/* Content */
+.content {
+    padding: 10px;
+}
+
+/* Header animations */
+@keyframes orange-spin {
+	0% {
+		transform: rotate(0);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion) {
+    .flipper { 
+        animation-play-state: paused;
+    }
+}
+
+@keyframes flipper-flip {
+	0% {
+        color: rgb(255, 252, 225);
+		transform: scale(1.0);
+	}
+    15%, 70% {
+        transform: scale(1.0, -1.0);
+        color: hotpink;
+
+    }
+	85%, 100% {
+        transform: scale(1.0, 1.0);
+        color: rgb(255, 252, 225);
+
+	}
+}
+
+@keyframes confetti {
+    0% {
+        left: 25px;
+        opacity: 0;
+    }
+
+    20% {
+        top: -35px;
+        transform: rotate(20deg);
+        opacity: 100%;
+    }
+    50% {
+        left: -15px;
+    }
+    100% {
+        opacity: 0;
+        top: 0;
+        left: -15px;
+    }
+}
+
+@keyframes moreConfetti {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        top: -45px;
+        left: 75%;
+
+        opacity: 100%;
+    }
+    60% {
+        left: 80%;
+    }
+    100% {
+        transform: rotate(60deg);
+        opacity: 0;
+        top: 0;
+        left: 85%;
+    }
+}
+
+@keyframes evenMoreConfetti {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        top: -75px;
+        opacity: 100%;
+    }
+    60% {
+        left: 60%;
+    }
+    100% {
+        opacity: 0;
+        top: -5px;
+        left: 65%;
+    }
+}
